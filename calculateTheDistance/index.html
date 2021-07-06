@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+getDistance = (lng1, lat1, lng2, lat2) => {
+    let radLat1 = (lat1 * Math.PI) / 180.0;
+    let radLat2 = (lat2 * Math.PI) / 180.0;
+    let a = radLat1 - radLat2;
+    let b = (lng1 * Math.PI) / 180.0 - (lng2 * Math.PI) / 180.0;
+    let s =
+      2 *
+      Math.asin(
+        Math.sqrt(
+          Math.pow(Math.sin(a / 2), 2) +
+            Math.cos(radLat1) * Math.cos(radLat2) * Math.pow(Math.sin(b / 2), 2)
+        )
+      );
+    s = s * 6378137.0; // 取WGS84标准参考椭球中的地球长半径(单位:m)
+    s = Math.round(s * 10000) / 10000;
+    if (s >= 1000) {
+      let d = (s / 1000).toFixed(2) + 'Km';
+      return d
+    } else {
+      let d = s.toFixed(0) + 'm';
+      return d
+    }
+  };
+    </script>
+    
+</body>
+</html>
