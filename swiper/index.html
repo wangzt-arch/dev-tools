@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>swiper</title>
+    <script src="./swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="./swiper-bundle.min.css">
+    <style>
+        .swiper-container {
+            width: 100px;
+            height: 100px;
+            border: 1px solid red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="swiper-container">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                1
+            </div>
+            <div class="swiper-slide">
+                2
+            </div>
+            <div class="swiper-slide">
+                3
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var newsSwiper = new Swiper('.swiper-container', {
+            // autoplay: true,//可选选项，自动滑动
+            loop: true,
+            slidesPerView: auto,//设置slider容器能够同时显示的slides数量(carousel模式)。auto为居中显示一个
+            centeredSlides: true,//若为true，那么活动块会居中，而非默认状态下的居左...false
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: -18,
+                depth: 100,
+                modifier: 4,
+                slideShadows: true
+            },
+        })
+        //官方链接: https://www.swiper.com.cn/api/index.html
+    </script>
+</body>
+
+</html>
