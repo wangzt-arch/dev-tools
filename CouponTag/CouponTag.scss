@@ -1,0 +1,33 @@
+.coupon-tag {
+    position: relative;
+    border: 1Px solid #FFAEA1;
+    padding: 0 8px;
+    box-sizing: border-box;
+    font-size: 20px;
+    font-family: PingFangTC-Light, PingFangTC;
+    font-weight: 300;
+    color: #C0311A;  
+    margin-right: 16px; 
+    &::after,
+    &::before {
+        position: absolute;
+        top: 8px;
+        content: "";
+        width: 5px;
+        height: 10px;
+        background: #FFFFFF;
+        border: 1px solid #FFAEA1;
+    }
+
+    &::after {
+        right: -2px;
+        border-radius: 6px 0 0 6px;
+        border-right: transparent;
+    }
+
+    &::before {
+        left: -2px; 
+        border-radius: 0 6px 6px 0;
+        border-left: transparent;
+    }
+}
